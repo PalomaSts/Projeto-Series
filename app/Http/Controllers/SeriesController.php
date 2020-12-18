@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\SeriesFormRequest;
 use App\Serie;
 use Illuminate\http\Request;
 
@@ -26,7 +28,7 @@ class SeriesController extends Controller
         return view('series.create');
     }
 
-    public function store(Request $request){
+    public function store(SeriesFormRequest $request){
         $serie = Serie::create($request->all());
         $request->session()->flash('mensagem', "Série {$serie->id} criada com sucesso - {$serie->nome}");
         //gerando mensagem de confirmação / o flash é usado no lugar do put para que a imagem só apareça uma vez
