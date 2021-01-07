@@ -10,4 +10,8 @@ class Serie extends Model{
     public $timestamps = false; //informando pro laravel que não precisa guardar as infos de data de create e update
     protected $fillable = ['nome']; //toda propriedade que for ser passada pelo create()
     //no controller deve ser informada dentro desse atributo, é como o laravel previne erros
+
+    public function temporadas(){
+        return $this->hasMany(Temporada::class);
+    }
 }
