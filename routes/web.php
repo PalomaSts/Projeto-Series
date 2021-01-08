@@ -16,6 +16,7 @@ Route::get('/series/adicionar', 'SeriesController@create')->name('add_serie');
 //dar um nome permite trocar a url sem interferir nas parte que estão chamando
 Route::post('/series/adicionar', 'SeriesController@store');
 Route::delete('/series/{id}', 'SeriesController@destroy');
+Route::get('/series/{serieId}/temporadas', 'TemporadasController@index');
 
 
 
